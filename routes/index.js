@@ -12,6 +12,15 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/error", (req, res) => {
+  // let data = {
+  //   status: false,
+  //   message: "error!",
+  //   data: null,
+  // };
+  return res.status(500).json(data);
+});
+
 router.post("/auth/register", user.register);
 router.post("/auth/login", user.login);
 router.get("/auth/whoami", middlewares.auth, user.whoami);
